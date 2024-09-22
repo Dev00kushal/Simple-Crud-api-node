@@ -1,4 +1,5 @@
 const Product = require("../models/product.model.js");
+const mongoose = require("mongoose");
 
 const getProducts = async (req,res)=>{
     try {
