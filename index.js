@@ -1,7 +1,13 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const productRoute = require("./routes/product.routes.js");
+require("dotenv").config();
 const app = express();
+
+app.use(express.json({
+  strict: true
+}))
+
 
 app.use(
   express.urlencoded({
@@ -16,7 +22,7 @@ let PORT = 3000;
 // Database connection
 mongoose
   .connect(
-    "mongodb+srv://kushal:kushal@simple-backend.sct8c.mongodb.net/Collections?retryWrites=true&w=majority&appName=Simple-Backend"
+    process.env.MONGO_URI
   )
   .then(() => {
     console.log("connected to the database");
