@@ -12,8 +12,6 @@ const getProducts = async (req,res)=>{
       }
 }
 
-
-
 const getAProduct = async (req,res)=>{
     try {
         const { id } = req.params;

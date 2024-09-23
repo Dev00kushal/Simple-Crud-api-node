@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const productRoute = require("./routes/product.routes.js");
+const itemRoute = require("./routes/item.routes.js");
+
 require("dotenv").config();
 const app = express();
 
@@ -16,6 +18,7 @@ app.use(
 );
 
 app.use("/api/products", productRoute);
+app.use("/api/items",itemRoute);
 
 let PORT = 3000;
 
